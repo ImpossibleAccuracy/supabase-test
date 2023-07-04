@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.supabasetest.ui.fragment.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_createTripFragment"
+            app:destination="@id/createTripFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.supabasetest.ui.fragment.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_riderTripsFragment"
+            app:destination="@id/riderTripsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.supabasetest.ui.fragment.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/createTripFragment"
+        android:name="com.example.supabasetest.ui.fragment.create_trip.CreateTripFragment"
+        android:label="CreateTripFragment" >
+        <argument
+            android:name="rider"
+            app:argType="com.example.supabasetest.data.model.Rider" />
+    </fragment>
+    <fragment
+        android:id="@+id/riderTripsFragment"
+        android:name="com.example.supabasetest.ui.fragment.rider_trips.RiderTripsFragment"
+        android:label="RiderTripsFragment" >
+        <argument
+            android:name="rider"
+            app:argType="com.example.supabasetest.data.model.Rider" />
+    </fragment>
+</navigation>
